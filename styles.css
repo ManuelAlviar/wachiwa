@@ -1568,20 +1568,21 @@
         transition-duration: 0.01ms !important;
       }
     }
- /* =========================================
-   BOTÓN AULA VIRTUAL (PEGADO A LA DERECHA)
+/* =========================================
+   BOTÓN AULA VIRTUAL (SOLUCIÓN DEFINITIVA DERECHA)
    ========================================= */
 
-.btn-aula {
-  /* *** CLAVE PARA EMPUJARLO A LA DERECHA EN UN FLEX CONTAINER *** */
+/* Hacemos el selector más específico para evitar conflictos */
+header .brand .btn-aula {
+  /* ¡CLAVE! Esto empuja el botón a la derecha absoluta en el contenedor flex */
   margin-left: auto; 
-  /* ************************************************************* */
-  
+  /* --------------------------------------------------------------------- */
+
   display: flex;
   align-items: center;
   gap: 10px; 
   
-  /* Estilos visuales */
+  /* Estilos visuales estéticos */
   background-color: rgba(255, 255, 255, 0.15); 
   padding: 5px 15px 5px 5px; 
   border-radius: 50px; 
@@ -1589,18 +1590,17 @@
   text-decoration: none;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  margin-right: 15px; /* Separación del menú hamburguesa */
+  margin-right: 15px; 
 }
 
-/* Estilo del texto */
-.btn-aula span {
+/* Modifica también los estilos internos para que sean más específicos */
+header .brand .btn-aula span {
   color: white;
   font-weight: 600;
   font-size: 0.9rem;
 }
 
-/* Estilo del logo pequeño */
-.btn-aula img {
+header .brand .btn-aula img {
   width: 34px;
   height: 34px;
   border-radius: 50%;
@@ -1608,22 +1608,19 @@
   object-fit: cover;
 }
 
-/* Efecto al pasar el mouse (Hover) */
-.btn-aula:hover {
+header .brand .btn-aula:hover {
   background-color: white;
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
-.btn-aula:hover span {
-  color: var(--rojo); /* El texto se vuelve rojo de la marca */
+header .brand .btn-aula:hover span {
+  color: var(--rojo); 
 }
 
-/* Ocultar en dispositivos móviles (para no interferir con el menú) */
+/* Ocultar en dispositivos móviles */
 @media (max-width: 900px) {
-  .btn-aula {
+  header .brand .btn-aula {
     display: none;
   }
-          }
-  
-
+}
